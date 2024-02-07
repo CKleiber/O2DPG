@@ -28,8 +28,7 @@ ENERGY=${ENERGY:-13600}
 [[ ${SPLITID} != "" ]] && SEED="-seed ${SPLITID}" || SEED=""
 
 ${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py -e ${SIMENGINE} ${SEED} -eCM 13600 -col pp -colBkg pp -gen external -genBkg pythia8 -procBkg inel -j ${NWORKERS} -ns ${NSIGEVENTS} -nb ${NBKGEVENTS} -tf ${NTIMEFRAMES} -interactionRate 500000 -confKey "Diamond.width[2]=6." -mod "--skipModules ZDC" \
-        #--embedding -ini $O2DPG_ROOT/MC/config/PWGHF/ini/GeneratorHFXiC0ToXipipiEmb.ini 
-        --embedding -ini /data.local1/ckleiber/alice/O2DPG/MC/config/PWGHF/ini/GeneratorHFXiC0ToXipipiEmb.ini
+        --embedding -ini $O2DPG_ROOT/MC/config/PWGHF/ini/GeneratorHFXicPlusToXipipiEmb.ini
 
 # run workflow
 ${O2DPG_ROOT}/MC/bin/o2_dpg_workflow_runner.py -f workflow.json -tt ${TARGETTASK} --cpu-limit ${CPU_LIMIT}
